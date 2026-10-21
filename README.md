@@ -14,9 +14,11 @@ Connect an agent to the right data, preserve who can see it, and return evidence
 
 ## Quick start
 
-From this checkout, run:
+Clone the repository and start the fictional demo:
 
 ```sh
+git clone https://github.com/shlok97/fabric.git
+cd fabric
 python3 scripts/start.py
 ```
 
@@ -351,7 +353,7 @@ Local retrieval and isolation tests pass. The four-arm answer-quality comparison
 - [ ] Compare against direct tools and publish a reproducible evaluation.
 - [ ] Add narrow GitHub and Gmail adapters where the evaluation supports them.
 - [ ] Freeze and run the full 60-case agent evaluation.
-- [ ] Publish the tested implementation and synthetic demo.
+- [x] Publish the initial implementation and synthetic demo.
 
 The sequence is deliberate: establish isolation and useful evidence retrieval before expanding integrations or adding more infrastructure.
 
