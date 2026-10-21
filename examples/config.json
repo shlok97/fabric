@@ -1,0 +1,16 @@
+{
+  "workspace": "example-workspace",
+  "principals": [
+    {"id": "analyst-a", "tenant": "paper-kite", "name": "Example analyst A"},
+    {"id": "analyst-b", "tenant": "cedar-house", "name": "Example analyst B"}
+  ],
+  "collections": [
+    {"id": "common", "name": "Approved common documents", "grants": [{"tenant": "paper-kite"}, {"tenant": "cedar-house"}]},
+    {"id": "a-private", "name": "Paper Kite observations", "tenant": "paper-kite", "grants": [{"tenant": "paper-kite"}]}
+  ],
+  "connections": [
+    {"id": "my-documents", "kind": "folder", "collection": "common", "config": {"path": "/absolute/path/to/selected-documents"}},
+    {"id": "my-observations", "kind": "sqlite", "collection": "a-private", "config": {"path": "/absolute/path/to/source.db", "subjects": ["NORTHSTAR"]},
+      "descriptors": [{"id": "private.estimate", "title": "Revenue estimate", "description": "Approved fictional revenue estimate; exact period and basis.", "metric": "estimate", "unit": "inr_cr"}]}
+  ]
+}

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fabric-context"
+version = "0.1.0"
+description = "A local, tenant-scoped evidence gateway for AI applications."
+requires-python = ">=3.11"
+readme = "README.md"
+license = "MIT"
+dependencies = []
+
+[project.optional-dependencies]
+mcp = ["mcp==1.30.0"]
+dev = ["pytest==9.1.1"]
+semantic = ["fastembed==0.9.0"]
+
+[project.scripts]
+fabric = "fabric.__main__:main"
+
+[tool.setuptools]
+packages = ["fabric"]
+include-package-data = false
+
+[tool.setuptools.package-data]
+fabric = ["schema.sql", "static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

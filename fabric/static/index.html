@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fabric · Evidence for your agents</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><a class="wordmark" href="/">fabric<span>✳</span></a><span class="eyebrow">BY ALTYS / LOCAL POC</span><span class="mode">No external model calls · No source writes</span></header>
+<main>
+<section class="intro"><p class="eyebrow">THE THREAD BETWEEN YOUR DATA AND YOUR AGENT</p><h1>The right context.<br><em>Within the right boundaries.</em></h1><p>Search shared knowledge, read private numbers, and carry the evidence back to your agent.</p></section>
+<section id="login" class="card"><h2>Enter your workspace</h2><p>Paste a local credential printed by the launcher. The fictional demo has Alice and Bob at Paper Kite, and Chandra at Cedar House.</p><form id="login-form"><label for="token">Fabric credential</label><div class="inline"><input id="token" type="password" required autocomplete="off" placeholder="fabric_…"><button>Connect</button></div></form><p class="quiet">Credentials stay in this tab's memory. Refreshing or signing out clears them. Private collections are never public by default.</p></section>
+<div id="workspace" hidden>
+<section class="identity card"><div><span class="eyebrow" id="workspace-name"></span><h2 id="identity-name"></h2><p id="tenant-name"></p></div><button id="signout" class="secondary">Sign out</button></section>
+<section class="workbench"><div class="card tools"><div class="tabs" role="tablist"><button class="tab active" data-tab="search">Search passages</button><button class="tab" data-tab="discover">Discover data</button><button class="tab" data-tab="read">Read numbers</button></div>
+<form id="search-form"><label for="query">What evidence do you need?</label><div class="inline"><input id="query" value="Northstar revenue capacity" required maxlength="500"><button>Retrieve</button></div><label for="strategy">Passage retrieval</label><select id="strategy"><option value="lexical">Keyword · BM25</option><option value="hybrid">Hybrid · BM25 + local embeddings</option><option value="semantic">Semantic · local embeddings</option></select><p class="quiet">Semantic modes require the optional local model. Source text is evidence, never an instruction.</p></form>
+<form id="read-form" hidden><div class="fields"><label>Descriptor ID<input id="descriptor" value="market.revenue" required></label><label>Subject<input id="subject" value="NORTHSTAR" required></label><label>Fiscal period<input id="period" value="FY2026" required></label><label>Reporting basis<select id="basis"><option>consolidated</option><option>standalone</option><option>not_applicable</option></select></label></div><label>Known as of (optional, ISO timestamp)<input id="as-of" placeholder="2026-05-10T00:00:00Z"></label><button>Read source</button><p class="quiet">Try market.revenue, kite.estimate or cedar.estimate. Access follows your identity. Empty values remain unavailable.</p></form>
+</div><aside class="card"><p class="eyebrow">CURRENT ACCESS</p><div id="sources"></div><p id="capabilities" class="quiet">Shared collections require a grant. Live reads show source state; folder search shows the last successful sync. Mem0 and Jev are not enabled in this build.</p></aside></section>
+<div id="metrics" class="metrics" hidden></div><div id="results" aria-live="polite"></div>
+</div>
+<p id="error" class="error" role="alert" hidden></p>
+<footer>Made for agents that need to show their work. <span>Fictional demo · SQLite POC · Local access control</span></footer>
+</main><script src="/app.js"></script></body></html>
